@@ -1,0 +1,37 @@
+## editors
+/.idea
+/.vscode
+
+## system files
+.DS_Store
+
+## npm
+/node_modules/
+/npm-debug.log
+
+## testing
+/coverage/
+
+## temp folders
+/.tmp/
+
+# demo api script
+/demo/addApi.js
+
+#config
+.env
+
+# build
+/_site/
+/dist/
+/out-tsc/
+/demo/javascript/
+
+storybook-static
+custom-elements.json
+
+src/**/*.d.ts
+src/**/*.js.map
+!declarations.d.ts
+
+

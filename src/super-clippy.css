@@ -1,0 +1,51 @@
+:host {
+  color: var(--rh-color-text-primary-on-dark, #ffffff);
+  --form-padding: 0.5rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+rh-button::part(button) {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#response {
+  background-color: var(--rh-color-surface-darker, #1f1f1f);
+  overflow-y: scroll;
+  padding: calc(var(--form-padding) * 2);
+  margin-block-start: var(--form-padding);
+}
+
+#response:not(:has(*)) {
+  padding: 0;
+}
+
+#response > img {
+  max-width: 100%;
+}
+
+select,
+input {
+  font-size: 1rem;
+  padding: var(--form-padding);
+  margin-block: var(--form-padding);
+}
+
+textarea {
+  --textarea-border-width: 1px;
+  font-size: 1rem;
+  width: calc(var(--size) - (var(--body-spacing) * 2) - (var(--textarea-border-width) * 2)  - (var(--form-padding) * 2));
+  min-height: 5rem;
+  border-width: var(--textarea-border-width);
+  padding: var(--form-padding);
+  margin-block: var(--form-padding);
+}
+
+label {
+  display: block;
+}
+

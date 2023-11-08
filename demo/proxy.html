@@ -1,0 +1,21 @@
+<script src="https://www.redhatstatic.com/dx/v1-alpha/es-module-shims@1.7.3.js"></script>
+
+<rh-button danger id="trigger">Help</rh-button>
+<super-clippy></super-clippy>
+
+<script type="module">
+  import './src/super-clippy.js';
+  import './addApi.js'
+  import '@rhds/elements/rh-button/rh-button.js';
+</script>
+
+<script defer>
+  const openButton = document.querySelector('rh-button');
+  openButton.addEventListener('click', () => {
+    const clippy = document.querySelector('super-clippy');
+    const drawer = clippy
+      .shadowRoot
+      .querySelector('sl-drawer');
+    drawer.show();
+  });
+</script>
