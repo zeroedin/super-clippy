@@ -1,3 +1,4 @@
+/* Dependencies for demo, rollup uses this file to create a bundle */
 import '@patternfly/pfe-accordion';
 import '@patternfly/pfe-avatar';
 import '@patternfly/pfe-icon';
