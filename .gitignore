@@ -33,5 +33,5 @@ custom-elements.json
 src/**/*.d.ts
 src/**/*.js.map
 !declarations.d.ts
-
+tsconfig.tsbuildinfo
 
