@@ -58,15 +58,6 @@
         font-size: 1rem;
       }
 
-      #trigger {
-        display: block;
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        padding: 2rem;
-        z-index: 104;
-      }
-
       iframe {
         width: 100%;
         height: 100vh;
@@ -78,25 +69,10 @@
   <body>
 
     <iframe src="./iframe.html"></iframe>
-
-    <rh-button danger id="trigger">Help</rh-button>
     <super-clippy></super-clippy>
-
     <script type="module">
       import '../src/super-clippy.js';
       import './addApi.js'
-      import '@rhds/elements/rh-button/rh-button.js';
-    </script>
-
-    <script defer>
-      const openButton = document.querySelector('rh-button');
-      openButton.addEventListener('click', () => {
-        const clippy = document.querySelector('super-clippy');
-        const drawer = clippy
-          .shadowRoot
-          .querySelector('sl-drawer');
-        drawer.show();
-      });
     </script>
   </body>
 </html>

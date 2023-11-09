@@ -141,6 +141,9 @@ export class SuperClippy extends LitElement {
 
   render() {
     return html`
+      <rh-button @click="${this.#togglePanel}" danger id="trigger"
+        >Help</rh-button
+      >
       <sl-drawer
         label="Hello, how can I help?"
         class="drawer-overview"
@@ -427,6 +430,12 @@ export class SuperClippy extends LitElement {
       this.#loading = false;
     }
     this.requestUpdate();
+  }
+
+  #togglePanel() {
+    const drawer = this.shadowRoot?.querySelector('sl-drawer');
+    console.log(drawer);
+    drawer?.show();
   }
 }
 
