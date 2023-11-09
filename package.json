@@ -51,6 +51,7 @@
     "@web/dev-server-storybook": "^0.5.4",
     "@web/test-runner": "^0.14.0",
     "concurrently": "^5.3.0",
+    "dotenv": "^16.3.1",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^4.3.8",
