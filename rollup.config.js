@@ -29,6 +29,7 @@ export default {
         { src: 'node_modules/@patternfly/pfe-accordion/**/*', dest: './demo/javascript/@patternfly/pfe-accordion' },
         { src: 'node_modules/@patternfly/pfe-content-set/**/*', dest: './demo/javascript/@patternfly/pfe-content-set' },
         { src: 'node_modules/@cpelements/pfe-navigation/**/*', dest: './demo/javascript/@cpelements/pfe-navigation' },
+        { src: 'src/**/*', dest: './demo/javascript/super-clippy' },
       ]
     }),
   ],
