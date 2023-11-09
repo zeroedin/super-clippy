@@ -6,8 +6,6 @@ import { customElement, property } from 'lit/decorators.js';
 import '@rhds/elements/rh-spinner/rh-spinner.js';
 import '@rhds/elements/rh-button/rh-button.js';
 
-import '@patternfly/elements/pf-clipboard-copy/pf-clipboard-copy.js';
-
 // eslint-disable-next-line import/no-extraneous-dependencies
 import '@shoelace-style/shoelace/dist/components/drawer/drawer.js';
 // eslint-disable-next-line import/no-extraneous-dependencies
