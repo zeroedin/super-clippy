@@ -11,7 +11,7 @@ import '@patternfly/elements/pf-clipboard-copy/pf-clipboard-copy.js';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import '@shoelace-style/shoelace/dist/components/drawer/drawer.js';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import shoelaceStyle from '@shoelace-style/shoelace/dist/themes/dark.css';
+import shoelaceStyle from './shoe-lace-dark.css';
 
 import style from './super-clippy.css';
 

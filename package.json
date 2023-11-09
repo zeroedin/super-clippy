@@ -13,16 +13,16 @@
   },
   "scripts": {
     "analyze": "cem analyze",
-    "start": "npm run api && npm run bundle && tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
+    "start": "npm run api && npm run bundle && tspc && concurrently -k -r \"tspc --watch --preserveWatchOutput\" \"wds\"",
     "bundle": "rollup -c rollup.config.js",
-    "build": "npm run api && npm run bundle && tsc && npm run analyze -- --exclude dist",
-    "prepublish": "tsc && npm run analyze -- --exclude dist",
+    "build": "npm run api && npm run bundle && tspc && npm run analyze -- --exclude dist",
+    "prepublish": "tspc && npm run analyze -- --exclude dist",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
-    "test": "tsc && wtr --coverage",
-    "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
-    "storybook": "tsc && npm run analyze -- --exclude dist && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
-    "storybook:build": "tsc && npm run analyze -- --exclude dist && build-storybook",
+    "test": "tspc && wtr --coverage",
+    "test:watch": "tspc && concurrently -k -r \"tspc --watch --preserveWatchOutput\" \"wtr --watch\"",
+    "storybook": "tspc && npm run analyze -- --exclude dist && concurrently -k -r \"tspc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
+    "storybook:build": "tspc && npm run analyze -- --exclude dist && build-storybook",
     "proxy": "npx spandx -c spandx.config.cjs",
     "api": "node scripts/api-key-generate.js",
     "prepare": "ts-patch install -s"
@@ -67,7 +67,8 @@
     "spandx": "^2.2.5",
     "ts-patch": "^3.0.2",
     "tslib": "^2.6.2",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "typescript-transform-lit-css": "^1.0.0"
   },
   "customElements": "custom-elements.json",
   "eslintConfig": {

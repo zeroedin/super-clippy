@@ -15,7 +15,14 @@
     "inlineSources": true,
     "rootDir": ".",
     "declaration": true,
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "transform": "typescript-transform-lit-css",
+        "uglify": true,
+        "inline": true
+      },
+    ]
   },
   "files": [
     "./declaration.d.ts"
