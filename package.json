@@ -13,9 +13,9 @@
   },
   "scripts": {
     "analyze": "cem analyze",
-    "start": "npm run bundle && tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
+    "start": "npm run api && npm run bundle && tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
     "bundle": "rollup -c rollup.config.js",
-    "build": "npm run bundle && tsc && npm run analyze -- --exclude dist",
+    "build": "npm run api && npm run bundle && tsc && npm run analyze -- --exclude dist",
     "prepublish": "tsc && npm run analyze -- --exclude dist",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
@@ -23,7 +23,8 @@
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
     "storybook": "tsc && npm run analyze -- --exclude dist && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
     "storybook:build": "tsc && npm run analyze -- --exclude dist && build-storybook",
-    "proxy": "npx spandx -c spandx.config.cjs"
+    "proxy": "npx spandx -c spandx.config.cjs",
+    "api": "node scripts/api-key-generate.js"
   },
   "dependencies": {
     "@cpelements/pfe-navigation": "^1.0.125",
