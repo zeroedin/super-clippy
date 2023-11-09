@@ -21,7 +21,7 @@
     "./declaration.d.ts"
   ],
   "include": [
-    "src/**/*"
+    "./src/*"
   ],
   "exclude": [
     "bin",
