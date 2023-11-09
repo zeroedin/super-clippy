@@ -24,7 +24,8 @@
     "storybook": "tsc && npm run analyze -- --exclude dist && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
     "storybook:build": "tsc && npm run analyze -- --exclude dist && build-storybook",
     "proxy": "npx spandx -c spandx.config.cjs",
-    "api": "node scripts/api-key-generate.js"
+    "api": "node scripts/api-key-generate.js",
+    "prepare": "ts-patch install -s"
   },
   "dependencies": {
     "@cpelements/pfe-navigation": "^1.0.125",
@@ -64,6 +65,7 @@
     "rollup-plugin-minify-html-literals": "^1.2.6",
     "rollup-plugin-terser": "^7.0.2",
     "spandx": "^2.2.5",
+    "ts-patch": "^3.0.2",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2"
   },
