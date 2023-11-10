@@ -293,13 +293,12 @@ export class SuperClippy extends LitElement {
       case 3:
         if (this.#content === null || this.#content === '') {
           // TODO: ability to show error messages
-          console.log('no content');
+          console.log('[warn] no prompt given');
           return;
         }
         this.#requestText(`${this.#promptSelect?.value} ${this.#content}`);
         break;
       case 4:
-        console.log('submit image prompt');
         this.#requestImage(
           this.#imagePrompt?.value,
           this.#imageSize?.value,
@@ -412,14 +411,10 @@ export class SuperClippy extends LitElement {
         this.#waitMessage =
           'The response is taking longer then expected... Please wait';
       } else {
-        console.log('data message did not time out');
-        console.log('what about data.body', data.body);
         this.#response = data.message;
         this.#loading = false;
       }
     } else {
-      console.log('data message did not exist');
-      console.log('what about data.body', data.body);
       this.#response = data;
       this.#loading = false;
     }
@@ -428,7 +423,6 @@ export class SuperClippy extends LitElement {
 
   #togglePanel() {
     const drawer = this.shadowRoot?.querySelector('sl-drawer');
-    console.log(drawer);
     drawer?.show();
   }
 }
