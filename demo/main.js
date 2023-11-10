@@ -6,3 +6,4 @@ import '@patternfly/pfe-jump-links';
 import '@patternfly/pfe-content-set';
 import '@patternfly/pfelement';
 import '@cpelements/pfe-navigation';
+import '../src/super-clippy.js';
