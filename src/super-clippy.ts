@@ -277,11 +277,7 @@ export class SuperClippy extends LitElement {
     this.requestUpdate();
   }
 
-  #onClick(event: PointerEvent) {
-    if (!(event instanceof PointerEvent)) {
-      return;
-    }
-
+  #onClick() {
     switch (this.#promptSelect?.selectedIndex) {
       case 0:
         break;
