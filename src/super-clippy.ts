@@ -164,11 +164,11 @@ export class SuperClippy extends LitElement {
             Suggest Metadata
           </option>
           <option
-            value="Given the taxonomy categories [red hat, open source, open shift], return a comma separated list of the terms this text best represents: "
+            value="Given the taxonomy categories [AI/ML,APIs,Application modernization,Automation,Big data,Cloud,Cloud services,Communities,Consulting,Containers,Culture,Customer success,Development,DevOps,Digital transformation,Edge computing,Emerging technology,Events,Integration,IoT,Kubernetes,Linux,Management,Microservices,Migration,NFV,Open hybrid cloud,Open source,Open source communities,OpenStack,Operations,Partners,Process,Process automation,Quarkus,SAP workloads,Security,Storage,Training,Virtualization], please return a maximum of 4 terms as a comma separated list of the topics this text best represents: "
           >
             Suggest a Taxonomy
           </option>
-          <option value="Generate an image with the following features: ">
+          <option value="Generate an image with the following features: illustration, vector, red, teal, ">
             Generate an Image
           </option>
           <option value="">Create my own prompt</option>
@@ -194,7 +194,7 @@ export class SuperClippy extends LitElement {
         </div>
         <div ?hidden="${!this.#showImageOptions}">
           <label for="imagePrompt"
-            >Generate an image with the following features:</label
+            >Generate an image with the following features: illustration, vector, red, teal, </label
           >
           <textarea
             name="imagePrompt"
@@ -271,11 +271,8 @@ export class SuperClippy extends LitElement {
       return;
     }
 
-    const promptStyle = ", illustration, vector, red, teal";
-    const promptPlus = prompt.concat(promptStyle.toString());
-
     this.#loading = true;
-    const data = SuperClippy.stringify('getImage', promptPlus, size, quality);
+    const data = SuperClippy.stringify('getImage', prompt, size, quality);
     console.log(data);
     this.#socket?.send(data);
     this.requestUpdate();
