@@ -164,11 +164,11 @@ export class SuperClippy extends LitElement {
             Suggest Metadata
           </option>
           <option
-            value="Given the taxonomy categories [red hat, open source, open shift], suggest which the following taxonomies the following text content best represents: "
+            value="Given the taxonomy categories [red hat, open source, open shift], return a comma separated list of the terms this text best represents: "
           >
             Suggest a Taxonomy
           </option>
-          <option value="Generate a image with the following features: ">
+          <option value="Generate an image with the following features: ">
             Generate an Image
           </option>
           <option value="">Create my own prompt</option>
@@ -261,6 +261,7 @@ export class SuperClippy extends LitElement {
   }
 
   async #requestImage(prompt?: string, size?: string, quality?: string) {
+
     if (!this.#connection) {
       console.warn('[warn] no connection');
       return;
@@ -270,8 +271,11 @@ export class SuperClippy extends LitElement {
       return;
     }
 
+    const promptStyle = ", illustration, vector, red, teal";
+    const promptPlus = prompt.concat(promptStyle.toString());
+
     this.#loading = true;
-    const data = SuperClippy.stringify('getImage', prompt, size, quality);
+    const data = SuperClippy.stringify('getImage', promptPlus, size, quality);
     console.log(data);
     this.#socket?.send(data);
     this.requestUpdate();
