@@ -159,7 +159,7 @@ export class SuperClippy extends LitElement {
             Translate content
           </option>
           <option
-            value="Given the following text, suggest new website meta data, keywords and description that would improve SEO rankings: "
+            value="Please suggest new website meta data, keywords and description that would improve SEO rankings based on the text that I share. Give the results to me in the format: Meta Title: title text [new paragraph] Meta Description: description [new paragraph] Meta Keywords: Keywords. Each category should be in its own paragraph. Here is the text to analyze: "
           >
             Suggest Metadata
           </option>
@@ -168,7 +168,9 @@ export class SuperClippy extends LitElement {
           >
             Suggest a Taxonomy
           </option>
-          <option value="Generate an image with the following features: illustration, vector, red, teal, ">
+          <option
+            value="Generate an image with the following features: illustration, vector, red, teal, "
+          >
             Generate an Image
           </option>
           <option value="">Create my own prompt</option>
@@ -194,8 +196,9 @@ export class SuperClippy extends LitElement {
         </div>
         <div ?hidden="${!this.#showImageOptions}">
           <label for="imagePrompt"
-            >Generate an image with the following features: illustration, vector, red, teal, </label
-          >
+            >Generate an image with the following features: illustration,
+            vector, red, teal,
+          </label>
           <textarea
             name="imagePrompt"
             type="text"
@@ -261,7 +264,6 @@ export class SuperClippy extends LitElement {
   }
 
   async #requestImage(prompt?: string, size?: string, quality?: string) {
-
     if (!this.#connection) {
       console.warn('[warn] no connection');
       return;
